@@ -5,6 +5,8 @@
  * @see {@link https://eslint.org} for further information.
  */
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 /**
  * Eslint rules that differ from airbnb base.
  * @see {@link https://eslint.org/docs/rules/|rules}
@@ -32,6 +34,8 @@ const eslintAgreed = {
       props: false,
     },
   ],
+  'no-console': isProduction ? 'error' : 'warn',
+  'no-debugger': isProduction ? 'error' : 'warn',
 };
 
 /**
@@ -109,6 +113,7 @@ const importExport = {
   'import/group-exports': 'off',
   'import/no-cycle': 'error',
   'import/no-default-export': 'off',
+  'import/no-named-export': 'off',
   'import/no-relative-parent-imports': 'off', // off because of false positives currently
   'import/no-self-import': 'error',
   'import/no-useless-path-segments': 'error',
@@ -148,6 +153,8 @@ const jest = {
   'jest/valid-expect': 'error',
   'jest/no-test-callback': 'error',
   'jest/prefer-spy-on': 'off',
+  'jest/prefer-called-with': 'off',
+  'jest/prefer-todo': 'error',
 };
 
 /**
@@ -271,6 +278,82 @@ const vue = {
       svg: 'never',
     },
   ],
+  'vue/array-bracket-spacing': 'error',
+  'vue/block-spacing': 'error',
+  'vue/camelcase': ['error', {properties: 'never'}],
+  'vue/arrow-spacing': ['error', {before: true, after: true}],
+  'vue/brace-style': [
+    'off',
+    '1tbs',
+    {
+      allowSingleLine: true,
+    },
+  ],
+  'vue/eqeqeq': [
+    'error',
+    'always',
+    {
+      null: 'ignore',
+    },
+  ],
+  'vue/no-restricted-syntax': [
+    'error',
+    {
+      selector: 'ForInStatement',
+      message:
+        'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
+    },
+    {
+      selector: 'ForOfStatement',
+      message:
+        'iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations.',
+    },
+    {
+      selector: 'LabeledStatement',
+      message: 'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+    },
+    {
+      selector: 'WithStatement',
+      message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
+    },
+  ],
+  'vue/space-unary-ops': [
+    'off',
+    {
+      words: true,
+      nonwords: false,
+      overrides: {},
+    },
+  ],
+  'vue/comma-dangle': [
+    'off',
+    {
+      arrays: 'always-multiline',
+      objects: 'always-multiline',
+      imports: 'always-multiline',
+      exports: 'always-multiline',
+      functions: 'always-multiline',
+    },
+  ],
+  'vue/key-spacing': [
+    'off',
+    {
+      beforeColon: false,
+      afterColon: true,
+    },
+  ],
+  'vue/object-curly-spacing': ['off', 'always'],
+  'vue/space-infix-ops': 'off',
+  'vue/no-boolean-default': 'off',
+  'vue/v-on-function-call': 'off',
+  'vue/match-component-file-name': [
+    'error',
+    {
+      extensions: ['vue', 'js', 'jsx'],
+      shouldMatchCase: true,
+    },
+  ],
+  'vue/require-direct-export': 'off',
 };
 
 /** configuration */
