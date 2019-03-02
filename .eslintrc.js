@@ -346,13 +346,14 @@ const vue = {
   'vue/space-infix-ops': 'off',
   'vue/no-boolean-default': 'off',
   'vue/v-on-function-call': 'off',
-  'vue/match-component-file-name': [
-    'error',
-    {
-      extensions: ['vue', 'js', 'jsx'],
-      shouldMatchCase: true,
-    },
-  ],
+  // 'vue/match-component-file-name': [
+  //   'error',
+  //   {
+  //     extensions: ['vue', 'js', 'jsx'],
+  //     shouldMatchCase: true,
+  //   },
+  // ],
+  'vue/match-component-file-name': 'off',
   'vue/require-direct-export': 'off',
 };
 
