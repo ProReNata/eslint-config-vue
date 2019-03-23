@@ -34,8 +34,8 @@ const eslintAgreed = {
       props: false,
     },
   ],
-  'no-console': isProduction ? 'error' : 'warn',
-  'no-debugger': isProduction ? 'error' : 'warn',
+  'no-console': isProduction ? 'error' : 'off',
+  'no-debugger': isProduction ? 'error' : 'off',
 };
 
 /**
@@ -155,6 +155,7 @@ const jest = {
   'jest/prefer-spy-on': 'off',
   'jest/prefer-called-with': 'off',
   'jest/prefer-todo': 'error',
+  'jest/no-empty-title': 'error',
 };
 
 /**
