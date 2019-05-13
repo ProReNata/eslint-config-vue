@@ -18,15 +18,15 @@ const eslintAgreed = {
     'error',
     {
       blankLine: 'always',
-      prev: ['block', 'block-like', 'cjs-export', 'class', 'export', 'import'],
       next: '*',
+      prev: ['block', 'block-like', 'cjs-export', 'class', 'export', 'import'],
     },
-    {blankLine: 'any', prev: 'import', next: 'import'},
-    {blankLine: 'any', prev: 'export', next: 'export'},
-    {blankLine: 'always', prev: 'import', next: 'export'},
-    {blankLine: 'always', prev: 'export', next: 'import'},
-    {blankLine: 'always', prev: '*', next: 'return'},
-    {blankLine: 'always', prev: '*', next: 'if'},
+    {blankLine: 'any', next: 'import', prev: 'import'},
+    {blankLine: 'any', next: 'export', prev: 'export'},
+    {blankLine: 'always', next: 'export', prev: 'import'},
+    {blankLine: 'always', next: 'import', prev: 'export'},
+    {blankLine: 'always', next: 'return', prev: '*'},
+    {blankLine: 'always', next: 'if', prev: '*'},
   ],
   'no-param-reassign': [
     'error',
@@ -108,13 +108,14 @@ const extendNative = {
  * @see {@link https://github.com/benmosher/eslint-plugin-import|plugin}
  */
 const importExport = {
+  // off because of false positives currently
+  'import/no-relative-parent-imports': 'off',
   'import/dynamic-import-chunkname': 'error',
-  'import/exports-last': 'off',
   'import/group-exports': 'off',
   'import/no-cycle': 'error',
   'import/no-default-export': 'off',
   'import/no-named-export': 'off',
-  'import/no-relative-parent-imports': 'off', // off because of false positives currently
+  'import/exports-last': 'off',
   'import/no-self-import': 'error',
   'import/no-useless-path-segments': 'error',
   'import/no-unresolved': 'error',
@@ -127,8 +128,8 @@ const importExport = {
  * @see {@link https://github.com/jest-community/eslint-plugin-jest|plugin}
  */
 const jest = {
+  'jest/prefer-inline-snapshots': 'off',
   'jest/no-alias-methods': 'error',
-  'jest/no-test-prefixes': 'error',
   'jest/consistent-test-it': 'error',
   'jest/lowercase-name': 'error',
   'jest/no-disabled-tests': 'error',
@@ -142,7 +143,7 @@ const jest = {
   'jest/expect-expect': 'error',
   'jest/no-test-return-statement': 'error',
   'jest/prefer-expect-assertions': 'error',
-  'jest/prefer-inline-snapshots': 'off',
+  'jest/no-test-prefixes': 'error',
   'jest/prefer-strict-equal': 'error',
   'jest/prefer-to-be-null': 'error',
   'jest/prefer-to-be-undefined': 'error',
@@ -157,10 +158,7 @@ const jest = {
   'jest/prefer-called-with': 'off',
   'jest/prefer-todo': 'error',
   'jest/no-empty-title': 'error',
-  'jsdoc/check-alignment': 'error',
-  'jsdoc/check-indentation': 'error',
-  'jsdoc/check-syntax': 'error',
-  'jsdoc/require-jsdoc': 'off',
+  'jest/no-mocks-import': 'off',
 };
 
 /**
@@ -168,8 +166,8 @@ const jest = {
  * @see {@link https://github.com/gajus/eslint-plugin-jsdoc|plugin}
  */
 const jsdoc = {
+  'jsdoc/require-returns-description': 'warn',
   'jsdoc/require-param': 'warn',
-  'jsdoc/require-hyphen-before-param-description': 'warn',
   'jsdoc/check-types': 'warn',
   'jsdoc/newline-after-description': 'warn',
   'jsdoc/require-description-complete-sentence': 'warn',
@@ -179,7 +177,7 @@ const jsdoc = {
   'jsdoc/require-description': 'off',
   'jsdoc/require-param-description': 'warn',
   'jsdoc/require-param-type': 'warn',
-  'jsdoc/require-returns-description': 'warn',
+  'jsdoc/require-hyphen-before-param-description': 'warn',
   'jsdoc/require-returns-type': 'warn',
   'jsdoc/no-undefined-types': 'warn',
   'jsdoc/require-param-name': 'warn',
@@ -187,7 +185,10 @@ const jsdoc = {
   'jsdoc/check-examples': 'warn',
   'jsdoc/require-returns': 'off',
   'jsdoc/require-returns-check': 'off',
-  'jest/no-mocks-import': 'off',
+  'jsdoc/check-alignment': 'error',
+  'jsdoc/check-indentation': 'off',
+  'jsdoc/check-syntax': 'error',
+  'jsdoc/require-jsdoc': 'off',
 };
 
 /**
@@ -195,13 +196,13 @@ const jsdoc = {
  * @see {@link https://github.com/wix/eslint-plugin-lodash|plugin}
  */
 const lodash = {
+  'lodash/prefer-constant': 'off',
   'lodash/prefer-get': 'off',
-  'lodash/prefer-lodash-typecheck': 'off',
   'lodash/prefer-includes': 'off',
   'lodash/prefer-is-nil': 'warn',
   'lodash/prefer-lodash-chain': 'off',
   'lodash/prefer-lodash-method': 'off',
-  'lodash/prefer-constant': 'off',
+  'lodash/prefer-lodash-typecheck': 'off',
   'lodash/prefer-matches': 'off',
   'lodash/prefer-noop': 'error',
   'lodash/prefer-over-quantifier': 'off',
@@ -258,8 +259,8 @@ const sortClass = {
  * @see {@link https://github.com/vuejs/eslint-plugin-vue|plugin}
  */
 const vue = {
+  'vue/camelcase': ['error', {properties: 'never'}],
   'vue/v-bind-style': ['error', 'shorthand'],
-  'vue/component-name-in-template-casing': ['error', 'kebab-case'],
   'vue/no-spaces-around-equal-signs-in-attribute': 'error',
   'vue/singleline-html-element-content-newline': [
     'error',
@@ -287,8 +288,8 @@ const vue = {
   ],
   'vue/array-bracket-spacing': 'error',
   'vue/block-spacing': 'error',
-  'vue/camelcase': ['error', {properties: 'never'}],
-  'vue/arrow-spacing': ['error', {before: true, after: true}],
+  'vue/component-name-in-template-casing': ['error', 'kebab-case'],
+  'vue/arrow-spacing': ['error', {after: true, before: true}],
   'vue/brace-style': [
     'off',
     '1tbs',
@@ -306,47 +307,47 @@ const vue = {
   'vue/no-restricted-syntax': [
     'error',
     {
-      selector: 'ForInStatement',
       message:
         'for..in loops iterate over the entire prototype chain, which is virtually never what you want. Use Object.{keys,values,entries}, and iterate over the resulting array.',
+      selector: 'ForInStatement',
     },
     {
-      selector: 'ForOfStatement',
       message:
         'iterators/generators require regenerator-runtime, which is too heavyweight for this guide to allow them. Separately, loops should be avoided in favor of array iterations.',
+      selector: 'ForOfStatement',
     },
     {
-      selector: 'LabeledStatement',
       message: 'Labels are a form of GOTO; using them makes code confusing and hard to maintain and understand.',
+      selector: 'LabeledStatement',
     },
     {
-      selector: 'WithStatement',
       message: '`with` is disallowed in strict mode because it makes code impossible to predict and optimize.',
+      selector: 'WithStatement',
     },
   ],
   'vue/space-unary-ops': [
     'off',
     {
-      words: true,
       nonwords: false,
       overrides: {},
+      words: true,
     },
   ],
   'vue/comma-dangle': [
     'off',
     {
       arrays: 'always-multiline',
-      objects: 'always-multiline',
-      imports: 'always-multiline',
       exports: 'always-multiline',
       functions: 'always-multiline',
+      imports: 'always-multiline',
+      objects: 'always-multiline',
     },
   ],
   'vue/key-spacing': [
     'off',
     {
-      beforeColon: false,
       afterColon: true,
+      beforeColon: false,
     },
   ],
   'vue/object-curly-spacing': ['off', 'always'],
@@ -494,21 +495,21 @@ module.exports = {
    */
   rules: {
     ...objectSpread,
-    ...jsdoc,
-    ...prettier,
-    ...eslintAgreed,
     ...eslintSwitchCase,
     ...importExport,
     ...promise,
     ...classProperty,
-    ...sortClass,
+    ...eslintAgreed,
     ...compat,
     ...extendNative,
     ...eslintComments,
     ...vue,
     ...lodash,
+    ...prettier,
     ...cssModules,
+    ...jsdoc,
     ...jest,
+    ...sortClass,
   },
 
   /**
