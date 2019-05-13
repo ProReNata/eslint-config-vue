@@ -119,6 +119,7 @@ const importExport = {
   'import/no-useless-path-segments': 'error',
   'import/no-unresolved': 'error',
   'import/no-extraneous-dependencies': 'error',
+  'import/no-unused-modules': 'off',
 };
 
 /**
@@ -156,6 +157,10 @@ const jest = {
   'jest/prefer-called-with': 'off',
   'jest/prefer-todo': 'error',
   'jest/no-empty-title': 'error',
+  'jsdoc/check-alignment': 'error',
+  'jsdoc/check-indentation': 'error',
+  'jsdoc/check-syntax': 'error',
+  'jsdoc/require-jsdoc': 'off',
 };
 
 /**
@@ -182,6 +187,7 @@ const jsdoc = {
   'jsdoc/check-examples': 'warn',
   'jsdoc/require-returns': 'off',
   'jsdoc/require-returns-check': 'off',
+  'jest/no-mocks-import': 'off',
 };
 
 /**
