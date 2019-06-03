@@ -12,7 +12,7 @@ const isProduction = process.env.NODE_ENV === 'production';
  * @see {@link https://eslint.org/docs/rules/|rules}
  */
 const eslintAgreed = {
-  camelcase: ['error', {properties: 'never'}], // because Eketorps property names are camel_case
+  camelcase: ['error', {properties: 'never'}], // because Eketorp's property names are camel_case
   curly: ['error', 'all'],
   'padding-line-between-statements': [
     'error',
@@ -67,7 +67,7 @@ const eslintSwitchCase = {
  * @see {@link https://github.com/babel/eslint-plugin-babel|plugin}
  */
 const classProperty = {
-  'babel/camelcase': ['error', {properties: 'never'}], // because Eketorps property names are camel_case
+  'babel/camelcase': ['error', {properties: 'never'}], // because Eketorp's property names are camel_case
   'babel/new-cap': 'error',
   'babel/no-invalid-this': 'error',
   'babel/object-curly-spacing': 'error',
@@ -159,6 +159,7 @@ const jest = {
   'jest/prefer-todo': 'error',
   'jest/no-empty-title': 'error',
   'jest/no-mocks-import': 'off',
+  'jest/no-commented-out-tests': 'off',
 };
 
 /**
@@ -189,6 +190,9 @@ const jsdoc = {
   'jsdoc/check-indentation': 'off',
   'jsdoc/check-syntax': 'error',
   'jsdoc/require-jsdoc': 'off',
+  'jsdoc/implements-on-classes': 'error',
+  'jsdoc/match-description': 'off',
+  'jsdoc/no-types': 'off',
 };
 
 /**
