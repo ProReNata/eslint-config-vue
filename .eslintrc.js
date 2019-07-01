@@ -9,6 +9,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 /**
  * Eslint rules that differ from airbnb base.
+ *
  * @see {@link https://eslint.org/docs/rules/|rules}
  */
 const eslintAgreed = {
@@ -40,6 +41,7 @@ const eslintAgreed = {
 
 /**
  * Additional ESLint rules for ESLint's directive-comments.
+ *
  * @see {@link https://github.com/mysticatea/eslint-plugin-eslint-comments|plugin}
  */
 const eslintComments = {
@@ -55,6 +57,7 @@ const eslintComments = {
 
 /**
  * Switch-case-specific linting rules for ESLint.
+ *
  * @see {@link https://github.com/lukeapage/eslint-plugin-switch-case|plugin}
  */
 const eslintSwitchCase = {
@@ -64,6 +67,7 @@ const eslintSwitchCase = {
 
 /**
  * An ESlint rule plugin companion to babel-eslint.
+ *
  * @see {@link https://github.com/babel/eslint-plugin-babel|plugin}
  */
 const classProperty = {
@@ -80,6 +84,7 @@ const classProperty = {
 /**
  * Lint the browser compatibility of your code.
  * Good to know during development so we make sure that we have all polyfill and transforms.
+ *
  * @see {@link https://github.com/amilajack/eslint-plugin-compat|plugin}
  */
 const compat = {
@@ -88,6 +93,7 @@ const compat = {
 
 /**
  * Helps you in tracking down problems when you are using css-modules.
+ *
  * @see {@link https://github.com/atfzl/eslint-plugin-css-modules|plugin}
  */
 const cssModules = {
@@ -97,6 +103,7 @@ const cssModules = {
 
 /**
  * ESLint plugin to prevent use of extended native objects.
+ *
  * @see {@link https://github.com/dustinspecker/eslint-plugin-no-use-extend-native|plugin}
  */
 const extendNative = {
@@ -105,6 +112,7 @@ const extendNative = {
 
 /**
  * ESLint plugin with rules that help validate proper imports.
+ *
  * @see {@link https://github.com/benmosher/eslint-plugin-import|plugin}
  */
 const importExport = {
@@ -125,6 +133,7 @@ const importExport = {
 
 /**
  * ESLint plugin for Jest.
+ *
  * @see {@link https://github.com/jest-community/eslint-plugin-jest|plugin}
  */
 const jest = {
@@ -164,6 +173,7 @@ const jest = {
 
 /**
  * JSDoc specific linting rules for ESLint.
+ *
  * @see {@link https://github.com/gajus/eslint-plugin-jsdoc|plugin}
  */
 const jsdoc = {
@@ -197,6 +207,7 @@ const jsdoc = {
 
 /**
  * ESLint rules for lodash.
+ *
  * @see {@link https://github.com/wix/eslint-plugin-lodash|plugin}
  */
 const lodash = {
@@ -217,6 +228,7 @@ const lodash = {
 
 /**
  * ESLint rule for suggesting that object spread properties be used.
+ *
  * @see {@link https://github.com/bryanrsmith/eslint-plugin-prefer-object-spread|plugin}
  */
 const objectSpread = {
@@ -225,6 +237,7 @@ const objectSpread = {
 
 /**
  * ESLint rule for prettier.
+ *
  * @see {@link https://prettier.io/docs/en/eslint.html|plugin}
  */
 const prettier = {
@@ -238,6 +251,7 @@ const promise = {
 
 /**
  * An ESLint rule for enforcing consistent ES6 class member order.
+ *
  * @see {@link https://github.com/bryanrsmith/eslint-plugin-sort-class-members|plugin}
  */
 const sortClass = {
@@ -259,7 +273,8 @@ const sortClass = {
 };
 
 /**
- * Official ESLint plugin for Vue.js
+ * Official ESLint plugin for Vuejs.
+ *
  * @see {@link https://github.com/vuejs/eslint-plugin-vue|plugin}
  */
 const vue = {
@@ -369,7 +384,7 @@ const vue = {
   'vue/require-direct-export': 'off',
 };
 
-/** configuration */
+/** Configuration. */
 module.exports = {
   /**
    * @see {@link https://eslint.org/docs/user-guide/configuring#specifying-environments|env}
@@ -402,6 +417,7 @@ module.exports = {
 
   /**
    * You can define global variables here.
+   *
    * @see {@link https://eslint.org/docs/user-guide/configuring#specifying-globals|globals}
    */
   globals: {
@@ -411,6 +427,7 @@ module.exports = {
   /**
    * Sometimes a more fine-controlled configuration is necessary, for example if the configuration
    * for files within the same directory has to be different.
+   *
    * @see {@link https://eslint.org/docs/user-guide/configuring#configuration-based-on-glob-patterns|overrides}
    */
   overrides: [
@@ -518,6 +535,7 @@ module.exports = {
 
   /**
    * Webpack-literate module resolution plugin for eslint-plugin-import.
+   *
    * @see {@link https://www.npmjs.com/package/eslint-import-resolver-webpack|plugin}
    */
   settings: {
