@@ -1,6 +1,6 @@
 {
   "name": "@prorenata/eslint-config-vue",
-  "version": "1.13.3",
+  "version": "1.13.4",
   "description": "ProReNata's Vue JS ESLint config.",
   "homepage": "https://github.com/ProReNata/eslint-config-vue",
   "author": {
@@ -36,6 +36,13 @@
     "javascript",
     "styleguide"
   ],
+  "files": [
+    ".eslintignore",
+    ".eslintrc.js",
+    ".prettierignore",
+    ".prettierrc.json",
+    "index.js"
+  ],
   "dependencies": {
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-config-prettier": "^6.0.0"
@@ -43,7 +50,7 @@
   "devDependencies": {
     "babel-eslint": "^10.0.2",
     "eclint": "^2.8.1",
-    "eslint": "^5.16.0",
+    "eslint": "=5.16.0",
     "eslint-find-rules": "^3.3.1",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-import-resolver-webpack": "^0.11.1",
@@ -53,8 +60,8 @@
     "eslint-plugin-eslint-comments": "^3.1.2",
     "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-jest": "^22.7.1",
-    "eslint-plugin-jsdoc": "^10.0.3",
+    "eslint-plugin-jest": "^22.7.2",
+    "eslint-plugin-jsdoc": "^15.3.2",
     "eslint-plugin-json": "^1.4.0",
     "eslint-plugin-lodash": "^5.1.0",
     "eslint-plugin-no-use-extend-native": "^0.4.1",
@@ -68,11 +75,11 @@
     "jscodeshift": "^0.6.4",
     "prettier": "=1.14.3",
     "safe-publish-latest": "^1.1.2",
-    "webpack": "^4.35.0"
+    "webpack": "^4.35.3"
   },
   "peerDependencies": {
     "babel-eslint": "^10.0.2",
-    "eslint": "^5.16.0",
+    "eslint": "=5.16.0",
     "eslint-import-resolver-webpack": "^0.11.1",
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-compat": "^3.2.0",
@@ -80,8 +87,8 @@
     "eslint-plugin-eslint-comments": "^3.1.2",
     "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-jest": "^22.7.1",
-    "eslint-plugin-jsdoc": "^10.0.3",
+    "eslint-plugin-jest": "^22.7.2",
+    "eslint-plugin-jsdoc": "^15.3.2",
     "eslint-plugin-json": "^1.4.0",
     "eslint-plugin-lodash": "^5.1.0",
     "eslint-plugin-no-use-extend-native": "^0.4.1",
@@ -91,8 +98,8 @@
     "eslint-plugin-sort-class-members": "^1.5.0",
     "eslint-plugin-switch-case": "^1.1.2",
     "eslint-plugin-vue": "^5.2.3",
-    "prettier": "^1.14.3",
-    "webpack": "^4.35.0"
+    "prettier": "=1.14.3",
+    "webpack": "^4.35.3"
   },
   "engines": {
     "node": ">=8.11.4",
