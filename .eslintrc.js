@@ -169,6 +169,8 @@ const jest = {
   'jest/no-empty-title': 'error',
   'jest/no-mocks-import': 'off',
   'jest/no-commented-out-tests': 'off',
+  'jest/no-duplicate-hooks': 'warn',
+  'jest/no-if': 'warn',
 };
 
 /**
