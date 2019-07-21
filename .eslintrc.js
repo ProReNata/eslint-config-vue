@@ -171,6 +171,8 @@ const jest = {
   'jest/no-commented-out-tests': 'off',
   'jest/no-duplicate-hooks': 'warn',
   'jest/no-if': 'warn',
+  'jest/no-export': 'error',
+  'jest/no-try-expect': 'off',
 };
 
 /**
