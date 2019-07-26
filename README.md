@@ -22,6 +22,12 @@ alt="devDependency status" height="18"/>
 <img src="https://badge.fury.io/js/%40prorenata%2Feslint-config-vue.svg"
 alt="npm version" height="18">
 </a>
+<a
+  href="https://bettercodehub.com/results/ProReNata/Feslint-config-vue"
+  title="bettercodehub score">
+<img src="https://bettercodehub.com/edge/badge/ProReNata/Feslint-config-vue?branch=master"
+  alt="bettercodehub score" height="18">
+</a>
 
 ProReNata shareable `eslint` config for vue modules.
 
