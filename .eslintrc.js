@@ -173,6 +173,7 @@ const jest = {
   'jest/no-if': 'warn',
   'jest/no-export': 'off',
   'jest/no-try-expect': 'off',
+  'jest/no-standalone-expect': 'error',
 };
 
 /**
