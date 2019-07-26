@@ -23,9 +23,9 @@ alt="devDependency status" height="18"/>
 alt="npm version" height="18">
 </a>
 <a
-  href="https://bettercodehub.com/results/ProReNata/Feslint-config-vue"
+  href="https://bettercodehub.com/results/ProReNata/eslint-config-vue"
   title="bettercodehub score">
-<img src="https://bettercodehub.com/edge/badge/ProReNata/Feslint-config-vue?branch=master"
+<img src="https://bettercodehub.com/edge/badge/ProReNata/eslint-config-vue?branch=master"
   alt="bettercodehub score" height="18">
 </a>
 
