@@ -5,7 +5,7 @@
  * @see {@link https://eslint.org} for further information.
  */
 
-const isProduction = process.env.NODE_ENV === 'production';
+// const isProduction = process.env.NODE_ENV === 'production';
 
 /**
  * Eslint rules that differ from airbnb base.
@@ -14,29 +14,9 @@ const isProduction = process.env.NODE_ENV === 'production';
  */
 const eslintAgreed = {
   camelcase: ['error', {properties: 'never'}], // because Eketorp's property names are camel_case
-  curly: ['error', 'all'],
-  'padding-line-between-statements': [
-    'error',
-    {
-      blankLine: 'always',
-      next: '*',
-      prev: ['block', 'block-like', 'cjs-export', 'class', 'export', 'import'],
-    },
-    {blankLine: 'any', next: 'import', prev: 'import'},
-    {blankLine: 'any', next: 'export', prev: 'export'},
-    {blankLine: 'always', next: 'export', prev: 'import'},
-    {blankLine: 'always', next: 'import', prev: 'export'},
-    {blankLine: 'always', next: 'return', prev: '*'},
-    {blankLine: 'always', next: 'if', prev: '*'},
-  ],
-  'no-param-reassign': [
-    'error',
-    {
-      props: false,
-    },
-  ],
-  'no-console': isProduction ? 'error' : 'off',
-  'no-debugger': isProduction ? 'error' : 'off',
+  complexity: 'off',
+  'max-lines-per-function': 'off',
+  'max-params': 'off',
 };
 
 /**
@@ -44,26 +24,14 @@ const eslintAgreed = {
  *
  * @see {@link https://github.com/mysticatea/eslint-plugin-eslint-comments|plugin}
  */
-const eslintComments = {
-  'eslint-comments/disable-enable-pair': 'error',
-  'eslint-comments/no-aggregating-enable': 'error',
-  'eslint-comments/no-duplicate-disable': 'error',
-  'eslint-comments/no-unlimited-disable': 'error',
-  'eslint-comments/no-unused-disable': 'error',
-  'eslint-comments/no-unused-enable': 'error',
-  'eslint-comments/no-restricted-disable': 'error',
-  'eslint-comments/no-use': 'warn',
-};
+const eslintComments = {};
 
 /**
  * Switch-case-specific linting rules for ESLint.
  *
  * @see {@link https://github.com/lukeapage/eslint-plugin-switch-case|plugin}
  */
-const eslintSwitchCase = {
-  'switch-case/no-case-curly': 'error',
-  'switch-case/newline-between-switch-case': ['error', 'always', {fallthrough: 'never'}],
-};
+const eslintSwitchCase = {};
 
 /**
  * An ESlint rule plugin companion to babel-eslint.
@@ -72,13 +40,6 @@ const eslintSwitchCase = {
  */
 const classProperty = {
   'babel/camelcase': ['error', {properties: 'never'}], // because Eketorp's property names are camel_case
-  'babel/new-cap': 'error',
-  'babel/no-invalid-this': 'error',
-  'babel/object-curly-spacing': 'error',
-  'babel/quotes': ['error', 'single', {avoidEscape: true}],
-  'babel/semi': 'error',
-  'babel/no-unused-expressions': 'error',
-  'babel/valid-typeof': 'error',
 };
 
 /**
@@ -87,195 +48,72 @@ const classProperty = {
  *
  * @see {@link https://github.com/amilajack/eslint-plugin-compat|plugin}
  */
-const compat = {
-  'compat/compat': 'warn',
-};
+const compat = {};
 
 /**
  * Helps you in tracking down problems when you are using css-modules.
  *
  * @see {@link https://github.com/atfzl/eslint-plugin-css-modules|plugin}
  */
-const cssModules = {
-  'css-modules/no-undef-class': 'warn',
-  'css-modules/no-unused-class': 'off',
-};
+const cssModules = {};
 
 /**
  * ESLint plugin to prevent use of extended native objects.
  *
  * @see {@link https://github.com/dustinspecker/eslint-plugin-no-use-extend-native|plugin}
  */
-const extendNative = {
-  'no-use-extend-native/no-use-extend-native': 'error',
-};
+const extendNative = {};
 
 /**
  * ESLint plugin with rules that help validate proper imports.
  *
  * @see {@link https://github.com/benmosher/eslint-plugin-import|plugin}
  */
-const importExport = {
-  // off because of false positives currently
-  'import/no-relative-parent-imports': 'off',
-  'import/dynamic-import-chunkname': 'error',
-  'import/group-exports': 'off',
-  'import/no-cycle': 'error',
-  'import/no-default-export': 'off',
-  'import/no-named-export': 'off',
-  'import/exports-last': 'off',
-  'import/no-self-import': 'error',
-  'import/no-useless-path-segments': 'error',
-  'import/no-unresolved': 'error',
-  'import/no-extraneous-dependencies': 'error',
-  'import/no-unused-modules': 'off',
-};
+const importExport = {};
 
 /**
  * ESLint plugin for Jest.
  *
  * @see {@link https://github.com/jest-community/eslint-plugin-jest|plugin}
  */
-const jest = {
-  'jest/prefer-inline-snapshots': 'off',
-  'jest/no-alias-methods': 'error',
-  'jest/consistent-test-it': 'error',
-  'jest/lowercase-name': 'error',
-  'jest/no-disabled-tests': 'error',
-  'jest/no-focused-tests': 'error',
-  'jest/no-hooks': 'error',
-  'jest/no-identical-title': 'error',
-  'jest/no-jasmine-globals': 'off', // off because of false positives currently
-  'jest/no-jest-import': 'error',
-  'jest/no-large-snapshots': 'error',
-  'jest/no-truthy-falsy': 'error',
-  'jest/expect-expect': 'error',
-  'jest/no-test-return-statement': 'error',
-  'jest/prefer-expect-assertions': 'error',
-  'jest/no-test-prefixes': 'error',
-  'jest/prefer-strict-equal': 'error',
-  'jest/prefer-to-be-null': 'error',
-  'jest/prefer-to-be-undefined': 'error',
-  'jest/prefer-to-contain': 'error',
-  'jest/prefer-to-have-length': 'error',
-  'jest/require-tothrow-message': 'error',
-  'jest/valid-describe': 'error',
-  'jest/valid-expect-in-promise': 'error',
-  'jest/valid-expect': 'error',
-  'jest/no-test-callback': 'error',
-  'jest/prefer-spy-on': 'off',
-  'jest/prefer-called-with': 'off',
-  'jest/prefer-todo': 'error',
-  'jest/no-empty-title': 'error',
-  'jest/no-mocks-import': 'off',
-  'jest/no-commented-out-tests': 'off',
-  'jest/no-duplicate-hooks': 'warn',
-  'jest/no-if': 'warn',
-  'jest/no-export': 'off',
-  'jest/no-try-expect': 'off',
-  'jest/no-standalone-expect': 'off',
-};
+const jest = {};
 
 /**
  * JSDoc specific linting rules for ESLint.
  *
  * @see {@link https://github.com/gajus/eslint-plugin-jsdoc|plugin}
  */
-const jsdoc = {
-  'jsdoc/require-returns-description': 'warn',
-  'jsdoc/require-param': 'warn',
-  'jsdoc/check-types': 'warn',
-  'jsdoc/newline-after-description': 'warn',
-  'jsdoc/require-description-complete-sentence': 'warn',
-  'jsdoc/require-example': 'off',
-  'jsdoc/check-tag-names': 'warn',
-  'jsdoc/check-param-names': 'warn',
-  'jsdoc/require-description': 'off',
-  'jsdoc/require-param-description': 'warn',
-  'jsdoc/require-param-type': 'warn',
-  'jsdoc/require-hyphen-before-param-description': 'warn',
-  'jsdoc/require-returns-type': 'warn',
-  'jsdoc/no-undefined-types': 'warn',
-  'jsdoc/require-param-name': 'warn',
-  'jsdoc/valid-types': 'warn',
-  'jsdoc/check-examples': 'warn',
-  'jsdoc/require-returns': 'off',
-  'jsdoc/require-returns-check': 'off',
-  'jsdoc/check-alignment': 'error',
-  'jsdoc/check-indentation': 'off',
-  'jsdoc/check-syntax': 'error',
-  'jsdoc/require-jsdoc': 'off',
-  'jsdoc/implements-on-classes': 'error',
-  'jsdoc/match-description': 'off',
-  'jsdoc/no-types': 'off',
-};
+const jsdoc = {};
 
 /**
  * ESLint rules for lodash.
  *
  * @see {@link https://github.com/wix/eslint-plugin-lodash|plugin}
  */
-const lodash = {
-  'lodash/prefer-constant': 'off',
-  'lodash/prefer-get': 'off',
-  'lodash/prefer-includes': 'off',
-  'lodash/prefer-is-nil': 'warn',
-  'lodash/prefer-lodash-chain': 'off',
-  'lodash/prefer-lodash-method': 'off',
-  'lodash/prefer-lodash-typecheck': 'off',
-  'lodash/prefer-matches': 'off',
-  'lodash/prefer-noop': 'error',
-  'lodash/prefer-over-quantifier': 'off',
-  'lodash/prefer-some': 'off',
-  'lodash/prefer-startswith': 'off',
-  'lodash/prefer-times': 'off',
-};
+const lodash = {};
 
 /**
  * ESLint rule for suggesting that object spread properties be used.
  *
  * @see {@link https://github.com/bryanrsmith/eslint-plugin-prefer-object-spread|plugin}
  */
-const objectSpread = {
-  'prefer-object-spread/prefer-object-spread': 'error',
-};
+const objectSpread = {};
 
 /**
  * ESLint rule for prettier.
  *
  * @see {@link https://prettier.io/docs/en/eslint.html|plugin}
  */
-const prettier = {
-  'prettier/prettier': 'error',
-};
+const prettier = {};
 
-const promise = {
-  'promise/prefer-await-to-callbacks': 'off',
-  'promise/prefer-await-to-then': 'off',
-};
+const promise = {};
 
 /**
  * An ESLint rule for enforcing consistent ES6 class member order.
  *
  * @see {@link https://github.com/bryanrsmith/eslint-plugin-sort-class-members|plugin}
  */
-const sortClass = {
-  'sort-class-members/sort-class-members': [
-    'error',
-    {
-      accessorPairPositioning: 'getThenSet',
-      order: [
-        '[static-properties]',
-        '[static-methods]',
-        '[properties]',
-        '[conventional-private-properties]',
-        'constructor',
-        '[methods]',
-        '[conventional-private-methods]',
-      ],
-    },
-  ],
-};
+const sortClass = {};
 
 /**
  * Official ESLint plugin for Vuejs.
@@ -394,40 +232,19 @@ module.exports = {
   /**
    * @see {@link https://eslint.org/docs/user-guide/configuring#specifying-environments|env}
    */
-  env: {
-    browser: true,
-    commonjs: true,
-    es6: true,
-    jest: true,
-    node: true,
-  },
+  env: {},
 
   /**
    * @see {@link https://eslint.org/docs/user-guide/configuring#extending-configuration-files|extends}
    */
-  extends: [
-    'eslint:recommended',
-    'airbnb-base',
-    'plugin:eslint-comments/recommended',
-    'plugin:import/errors',
-    'plugin:import/warnings',
-    'plugin:jest/recommended',
-    'plugin:prettier/recommended',
-    'plugin:promise/recommended',
-    'plugin:lodash/recommended',
-    'plugin:css-modules/recommended',
-    'plugin:vue/recommended',
-    'plugin:switch-case/recommended',
-  ],
+  extends: ['@xotic750/eslint-config-recommended', 'plugin:vue/recommended'],
 
   /**
    * You can define global variables here.
    *
    * @see {@link https://eslint.org/docs/user-guide/configuring#specifying-globals|globals}
    */
-  globals: {
-    logger: false,
-  },
+  globals: {},
 
   /**
    * Sometimes a more fine-controlled configuration is necessary, for example if the configuration
@@ -437,7 +254,7 @@ module.exports = {
    */
   overrides: [
     {
-      files: ['DevTools/**/*.js', '__tests__/**/*.{js,vue}', 'postcss.config.js', 'webpack.*.js'],
+      files: ['DevTools/**/*.js', '__tests__/**/*.vue'],
       rules: {
         'global-require': 'off',
         'import/no-extraneous-dependencies': [
@@ -447,21 +264,13 @@ module.exports = {
           },
         ],
         'no-console': 'off',
-      },
-    },
-    {
-      files: ['DevTools/**/*.js', '__tests__/**/*.{js,vue}', 'webpack.*.js'],
-      rules: {
+        'no-debugger': 'off',
+        'lodash/prefer-is-nil': 'off',
+        'lodash/prefer-noop': 'off',
         'func-names': 'off',
         'no-new-func': 'off',
         'promise/avoid-new': 'off',
-      },
-    },
-    {
-      files: ['DevTools/**/*.js', 'webpack.*.js'],
-      rules: {
         'no-restricted-globals': 'off',
-        strict: 'off',
       },
     },
     {
@@ -484,7 +293,7 @@ module.exports = {
     ecmaFeatures: {
       impliedStrict: true,
     },
-    ecmaVersion: 2018,
+    ecmaVersion: 2019,
     parser: 'babel-eslint', // https://github.com/vuejs/eslint-plugin-vue#what-is-the-use-the-latest-vue-eslint-parser-error
     sourceType: 'module',
   },
@@ -543,25 +352,5 @@ module.exports = {
    *
    * @see {@link https://www.npmjs.com/package/eslint-import-resolver-webpack|plugin}
    */
-  settings: {
-    'html/html-extensions': [
-      '.erb',
-      '.handlebars',
-      '.hbs',
-      '.htm',
-      '.html',
-      '.mustache',
-      '.nunjucks',
-      '.php',
-      '.tag',
-      '.twig',
-      '.we',
-    ],
-    'import/resolver': {
-      webpack: {
-        config: 'webpack.config.js',
-      },
-    },
-    polyfills: [],
-  },
+  settings: {},
 };
