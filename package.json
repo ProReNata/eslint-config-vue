@@ -104,6 +104,5 @@
   "engines": {
     "node": ">=8.11.4",
     "npm": "6.10.1"
-  },
-  "browserslist": []
+  }
 }
