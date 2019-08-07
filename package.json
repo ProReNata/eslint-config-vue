@@ -1,6 +1,6 @@
 {
   "name": "@prorenata/eslint-config-vue",
-  "version": "1.13.17",
+  "version": "1.13.18",
   "description": "ProReNata's Vue JS ESLint config.",
   "homepage": "https://github.com/ProReNata/eslint-config-vue",
   "author": {
@@ -44,7 +44,7 @@
     "index.js"
   ],
   "dependencies": {
-    "@xotic750/eslint-config-recommended": "^1.0.5"
+    "@xotic750/eslint-config-recommended": "^1.0.6"
   },
   "devDependencies": {
     "@xotic750/eslint-find-rules": "^4.0.1",
@@ -59,10 +59,10 @@
     "eslint-plugin-eslint-comments": "^3.1.2",
     "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jest": "^22.14.1",
+    "eslint-plugin-jest": "^22.15.0",
     "eslint-plugin-jsdoc": "^15.8.0",
     "eslint-plugin-json": "^1.4.0",
-    "eslint-plugin-lodash": "^5.1.0",
+    "eslint-plugin-lodash": "^5.1.1",
     "eslint-plugin-no-use-extend-native": "^0.4.1",
     "eslint-plugin-prefer-object-spread": "^1.2.1",
     "eslint-plugin-prettier": "^3.1.0",
