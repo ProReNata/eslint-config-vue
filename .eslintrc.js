@@ -287,6 +287,11 @@ module.exports = {
   ],
 
   /**
+   * @see {@link https://github.com/mysticatea/vue-eslint-parser|parser}
+   */
+  parser: 'vue-eslint-parser',
+
+  /**
    * @see {@link https://eslint.org/docs/user-guide/configuring#specifying-parser-options|parserOptions}
    */
   parserOptions: {
