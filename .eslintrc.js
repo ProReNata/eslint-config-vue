@@ -76,7 +76,10 @@ const importExport = {};
  *
  * @see {@link https://github.com/jest-community/eslint-plugin-jest|plugin}
  */
-const jest = {};
+const jest = {
+  'jest/prefer-hooks-on-top': 'off',
+  'jest/valid-title': 'off',
+};
 
 /**
  * JSDoc specific linting rules for ESLint.
