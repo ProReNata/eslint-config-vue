@@ -225,6 +225,25 @@ const vue = {
   // ],
   'vue/match-component-file-name': 'off',
   'vue/require-direct-export': 'off',
+  /* New rules without agreement */
+  'vue/component-definition-name-casing': 'off',
+  'vue/component-tags-order': 'off',
+  'vue/dot-location': 'off',
+  'vue/keyword-spacing': 'off',
+  'vue/max-len': 'off',
+  'vue/no-deprecated-scope-attribute': 'off',
+  'vue/no-deprecated-slot-attribute': 'off',
+  'vue/no-deprecated-slot-scope-attribute': 'off',
+  'vue/no-empty-pattern': 'off',
+  'vue/no-irregular-whitespace': 'off',
+  'vue/no-reserved-component-names': 'off',
+  'vue/no-static-inline-styles': 'off',
+  'vue/no-unsupported-features': 'off',
+  'vue/require-name-property': 'off',
+  'vue/static-class-names-order': 'off',
+  'vue/v-slot-style': 'off',
+  'vue/valid-v-bind-sync': 'off',
+  'vue/valid-v-slot': 'off',
 };
 
 /** Configuration. */
