@@ -1,6 +1,6 @@
 {
   "name": "@prorenata/eslint-config-vue",
-  "version": "1.14.2",
+  "version": "1.14.1",
   "description": "ProReNata's Vue JS ESLint config.",
   "homepage": "https://github.com/ProReNata/eslint-config-vue",
   "author": {
