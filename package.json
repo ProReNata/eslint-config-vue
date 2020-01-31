@@ -1,6 +1,6 @@
 {
   "name": "@prorenata/eslint-config-vue",
-  "version": "1.15.0",
+  "version": "1.14.3",
   "description": "ProReNata's Vue JS ESLint config.",
   "homepage": "https://github.com/ProReNata/eslint-config-vue",
   "author": {
@@ -12,7 +12,7 @@
   "main": "index.js",
   "scripts": {
     "find-unused": "eslint-find-rules --unused",
-    "prepare": "! type safe-publish-latest >/dev/null 2>&1 || safe-publish-latest && node node_modules/in-publish/in-install.js || (npm test)",
+    "prepare": "! type safe-publish-latest >/dev/null 2>&1 || safe-publish-latest && node node_modules/in-publish/in-install.js || (npm test && npm run find-unused)",
     "test": "npm run --silent tests-only",
     "tests-only": "eslint index.js",
     "security": "npm audit",
@@ -43,7 +43,9 @@
     ".prettierrc.json",
     "index.js"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "@xotic750/eslint-config-recommended": "^1.1.10"
+  },
   "devDependencies": {
     "@xotic750/eslint-find-rules": "^4.2.0",
     "babel-eslint": "^10.0.3",

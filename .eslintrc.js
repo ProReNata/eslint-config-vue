@@ -13,27 +13,6 @@
  * @see {@link https://eslint.org/docs/rules/|rules}
  */
 const eslintAgreed = {
-  curly: ['error', 'all'],
-  'padding-line-between-statements': [
-    'error',
-    {
-      blankLine: 'always',
-      next: '*',
-      prev: ['block', 'block-like', 'cjs-export', 'class', 'export', 'import'],
-    },
-    {blankLine: 'any', next: 'import', prev: 'import'},
-    {blankLine: 'any', next: 'export', prev: 'export'},
-    {blankLine: 'always', next: 'export', prev: 'import'},
-    {blankLine: 'always', next: 'import', prev: 'export'},
-    {blankLine: 'always', next: 'return', prev: '*'},
-    {blankLine: 'always', next: 'if', prev: '*'},
-  ],
-  'no-param-reassign': [
-    'error',
-    {
-      props: false,
-    },
-  ],
   camelcase: ['error', {properties: 'never'}], // because Eketorp's property names are camel_case
   complexity: 'off',
   'max-lines-per-function': 'off',
@@ -261,7 +240,7 @@ module.exports = {
   /**
    * @see {@link https://eslint.org/docs/user-guide/configuring#extending-configuration-files|extends}
    */
-  extends: ['plugin:vue/recommended'],
+  extends: ['@xotic750/eslint-config-recommended', 'plugin:vue/recommended'],
 
   /**
    * You can define global variables here.
