@@ -298,7 +298,10 @@ module.exports = {
         'no-param-reassign': [
           'warn',
           {
-            ignorePropertyModificationsFor: ['state'],
+            ignorePropertyModificationsFor: [
+              'state', // for vuex state
+              'acc', // for reduce accumulators
+            ],
           },
         ],
       },
