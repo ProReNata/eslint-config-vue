@@ -472,7 +472,6 @@ module.exports = {
     'plugin:switch-case/recommended',
     'plugin:prettier/recommended',
     'plugin:vue/recommended',
-    'prettier',
   ],
 
   /**
