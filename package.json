@@ -11,7 +11,7 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "find-unused": "eslint-find-rules --option",
+    "find-unused": "eslint-find-rules -u -n",
     "prepare": "! type safe-publish-latest >/dev/null 2>&1 || safe-publish-latest && node node_modules/in-publish/in-install.js || (npm test && npm run find-unused)",
     "test": "npm run --silent tests-only",
     "tests-only": "eslint index.js",
@@ -44,12 +44,15 @@
     "index.js"
   ],
   "dependencies": {
+    "eslint-config-airbnb-base": "^14.2.1",
     "eslint-find-rules": "^3.6.1",
     "jest": "^26.6.3"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.13.10",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.22.0",
+    "eslint-config-prettier": "^8.1.0",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-import-resolver-webpack": "^0.13.0",
     "eslint-plugin-babel": "^5.3.1",
@@ -97,7 +100,7 @@
     "eslint-plugin-promise": "^4",
     "eslint-plugin-sort-class-members": "^1",
     "eslint-plugin-switch-case": "^1",
-    "eslint-plugin-vue": "^6",
+    "eslint-plugin-vue": "^7",
     "prettier": "^2",
     "vue-eslint-parser": "^7",
     "webpack": "^5"
